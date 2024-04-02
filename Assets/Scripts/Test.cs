@@ -56,7 +56,7 @@ public class Test : MonoBehaviour
             float distance = Vector2.Distance(startPosition, currentPosition);
             if (distance >= swipeMinDistance)
             {
-                MySwipe("PrefabObject");
+                MySwipe();
             }
             startPosition = currentPosition;
         }
@@ -105,68 +105,22 @@ public class Test : MonoBehaviour
     //Inputs
     private void MyTap()
     {
-        //Instantiate(objectPrefab, new Vector3(currentPosition.x, currentPosition.y, 0), Quaternion.identity);
         Debug.Log("Tap");
     }
 
     private void MyPress()
     {
-        //if (currentTRobject != null)
-        //{
-        //    currentTRobject.transform.position = new Vector3(currentPosition.x, currentPosition.y, 0);
-        //}
-
-        //RaycastHit2D hit = Physics2D.Raycast(currentPosition, Vector3.forward, 0.5f);
-        //if (hit.collider != null)
-        //{
-        //    GameObject hitObject = hit.collider.gameObject;
-        //    hitObject.transform.position = new Vector3(currentPosition.x, currentPosition.y, 0);
-        //}
         Debug.Log("Press");
+        //Logica ser, agarrar objeto con un raycast
     }
 
     private void MyDoubleTap()
     {
-        //RaycastHit2D hit = Physics2D.Raycast(currentPosition, Vector3.forward, 0.5f);
-
-        //if (hit.collider != null)
-        //{
-        //    GameObject hitObject = hit.collider.gameObject;
-        //    Destroy(hitObject);
-        //}
         Debug.Log("DoubleTap");
     }
-    private void MySwipe(string tagToDelete)
+    private void MySwipe()
     {
-        //GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(tagToDelete);
-        //foreach (GameObject obj in objectsWithTag)
-        //{
-        //    Destroy(obj);
-        //}
         Debug.Log("Swipe");
-    }
-
-    //Buttoms
-    public void ChangeSprite(GameObject newSprite)
-    {
-        if (objectPrefab != null)
-        {
-            SpriteRenderer spriteRenderer = objectPrefab.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.sprite = newSprite.GetComponent<SpriteRenderer>().sprite;
-            }
-        }
-    }
-    public void ChangeColor(GameObject color)
-    {
-        if (objectPrefab != null)
-        {
-            SpriteRenderer spriteRenderer = objectPrefab.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.color = color.GetComponent<SpriteRenderer>().color;
-            }
-        }
+        //Cuando se cumpla, se lanzara la pokebal
     }
 }
